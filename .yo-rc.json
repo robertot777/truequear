@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "truequear",
+    "packageName": "truequear",
+    "packageFolder": "truequear",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "en",
+      "es"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.0",
+    "jwtSecretKey": "Y2JmODhhZmU2MTRkNTNkOWViMTMxOGQxYTQ1NjA1ZDhlODNiODEwYjFmNGFmOTEyNDUxZjBmZTI0OTY3OGY0ZDE1OWEwODRjNTNkYTlkYjgxMWYyYjkxYTk2MzFhMDBiNDlmMTk0MzIyNzQ2OTBmYjY3ODg0YTM5ZjZmODA4Mzc=",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "robertot777",
+  "repository-name": "truequear"
+}
