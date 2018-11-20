@@ -1,0 +1,30 @@
+{
+    "name": "Comuna",
+    "fields": [
+        {
+            "fieldName": "nombreComuna",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "region",
+            "otherEntityName": "region",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181120014029",
+    "javadoc": "Entidad de comuna de usuario",
+    "entityTableName": "comuna",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

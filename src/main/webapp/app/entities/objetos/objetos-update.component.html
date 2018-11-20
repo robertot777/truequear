@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-objetos-heading" jhiTranslate="truequearApp.objetos.home.createOrEditLabel">Create or edit a Objetos</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!objetos.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="objetos.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequearApp.objetos.tipoObjeto" for="field_tipoObjeto">Tipo Objeto</label>
+                    <input type="text" class="form-control" name="tipoObjeto" id="field_tipoObjeto"
+                        [(ngModel)]="objetos.tipoObjeto" required/>
+                    <div [hidden]="!(editForm.controls.tipoObjeto?.dirty && editForm.controls.tipoObjeto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipoObjeto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequearApp.objetos.agregarArchibo" for="field_agregarArchibo">Agregar Archibo</label>
+                    <div>
+                        <img [src]="'data:' + objetos.agregarArchiboContentType + ';base64,' + objetos.agregarArchibo" style="max-height: 100px;" *ngIf="objetos.agregarArchibo" alt="objetos image"/>
+                        <div *ngIf="objetos.agregarArchibo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{objetos.agregarArchiboContentType}}, {{byteSize(objetos.agregarArchibo)}}</span>
+                            <button type="button" (click)="clearInputImage('agregarArchibo', 'agregarArchiboContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_agregarArchibo" (change)="setFileData($event, objetos, 'agregarArchibo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="agregarArchibo" id="field_agregarArchibo"
+                        [(ngModel)]="objetos.agregarArchibo" required/>
+                    <input type="hidden" class="form-control" name="agregarArchiboContentType" id="field_agregarArchiboContentType"
+                        [(ngModel)]="objetos.agregarArchiboContentType" />
+                    <div [hidden]="!(editForm.controls.agregarArchibo?.dirty && editForm.controls.agregarArchibo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.agregarArchibo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequearApp.objetos.tipoObjetos" for="field_tipoObjetos">Tipo Objetos</label>
+                    <select class="form-control" name="tipoObjetos" [(ngModel)]="objetos.tipoObjetos" id="field_tipoObjetos" >
+                        <option value="ALIMENTACIONBEBIDA">{{'truequearApp.TipoObjetos.ALIMENTACIONBEBIDA' | translate}}</option>
+                        <option value="ARTEANTIGUEDADE">{{'truequearApp.TipoObjetos.ARTEANTIGUEDADE' | translate}}</option>
+                        <option value="VEHICULO">{{'truequearApp.TipoObjetos.VEHICULO' | translate}}</option>
+                        <option value="CASAHOGA">{{'truequearApp.TipoObjetos.CASAHOGA' | translate}}</option>
+                        <option value="COLECCIONES">{{'truequearApp.TipoObjetos.COLECCIONES' | translate}}</option>
+                        <option value="DEPORTE">{{'truequearApp.TipoObjetos.DEPORTE' | translate}}</option>
+                        <option value="EDUCAR">{{'truequearApp.TipoObjetos.EDUCAR' | translate}}</option>
+                        <option value="IMAGENESSONIDO">{{'truequearApp.TipoObjetos.IMAGENESSONIDO' | translate}}</option>
+                        <option value="INFORMATICAEELECTRONICA">{{'truequearApp.TipoObjetos.INFORMATICAEELECTRONICA' | translate}}</option>
+                        <option value="INMOBILIARIAS">{{'truequearApp.TipoObjetos.INMOBILIARIAS' | translate}}</option>
+                        <option value="JOYERIAS">{{'truequearApp.TipoObjetos.JOYERIAS' | translate}}</option>
+                        <option value="JUEGOSJUGUETE">{{'truequearApp.TipoObjetos.JUEGOSJUGUETE' | translate}}</option>
+                        <option value="LIBROSREVISTASCOMIC">{{'truequearApp.TipoObjetos.LIBROSREVISTASCOMIC' | translate}}</option>
+                        <option value="MUSICAX">{{'truequearApp.TipoObjetos.MUSICAX' | translate}}</option>
+                        <option value="ROPAYCALZADO">{{'truequearApp.TipoObjetos.ROPAYCALZADO' | translate}}</option>
+                        <option value="SALUDYBELLEZA">{{'truequearApp.TipoObjetos.SALUDYBELLEZA' | translate}}</option>
+                        <option value="SERVICIOS">{{'truequearApp.TipoObjetos.SERVICIOS' | translate}}</option>
+                        <option value="MANODEOBRA">{{'truequearApp.TipoObjetos.MANODEOBRA' | translate}}</option>
+                        <option value="TELEFONIAS">{{'truequearApp.TipoObjetos.TELEFONIAS' | translate}}</option>
+                        <option value="TIEMPOLIBRES">{{'truequearApp.TipoObjetos.TIEMPOLIBRES' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequearApp.objetos.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="objetos.descripcion" required/>
+                    <div [hidden]="!(editForm.controls.descripcion?.dirty && editForm.controls.descripcion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.descripcion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequearApp.objetos.nombre" for="field_nombre">Nombre</label>
+                    <select class="form-control" id="field_nombre" name="nombre" [(ngModel)]="objetos.nombreId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

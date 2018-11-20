@@ -1,0 +1,51 @@
+{
+    "name": "Objetos",
+    "fields": [
+        {
+            "fieldName": "tipoObjeto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "agregarArchibo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tipoObjetos",
+            "fieldType": "TipoObjetos",
+            "fieldValues": "ALIMENTACIONBEBIDA,ARTEANTIGUEDADE,VEHICULO,CASAHOGA,COLECCIONES,DEPORTE,EDUCAR,IMAGENESSONIDO,INFORMATICAEELECTRONICA,INMOBILIARIAS,JOYERIAS,JUEGOSJUGUETE,LIBROSREVISTASCOMIC,MUSICAX,ROPAYCALZADO,SALUDYBELLEZA,SERVICIOS,MANODEOBRA,TELEFONIAS,TIEMPOLIBRES"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "nombre",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "objetos"
+        }
+    ],
+    "changelogDate": "20181120014034",
+    "entityTableName": "objetos",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
