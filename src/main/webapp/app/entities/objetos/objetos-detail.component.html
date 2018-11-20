@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="objetos">
+            <h2><span jhiTranslate="truequearApp.objetos.detail.title">Objetos</span> {{objetos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="truequearApp.objetos.tipoObjeto">Tipo Objeto</span></dt>
+                <dd>
+                    <span>{{objetos.tipoObjeto}}</span>
+                </dd>
+                <dt><span jhiTranslate="truequearApp.objetos.agregarArchibo">Agregar Archibo</span></dt>
+                <dd>
+                    <div *ngIf="objetos.agregarArchibo">
+                        <a (click)="openFile(objetos.agregarArchiboContentType, objetos.agregarArchibo)">
+                            <img [src]="'data:' + objetos.agregarArchiboContentType + ';base64,' + objetos.agregarArchibo" style="max-width: 100%;" alt="objetos image"/>
+                        </a>
+                        {{objetos.agregarArchiboContentType}}, {{byteSize(objetos.agregarArchibo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="truequearApp.objetos.tipoObjetos">Tipo Objetos</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'truequearApp.TipoObjetos.' + objetos.tipoObjetos}}">{{objetos.tipoObjetos}}</span>
+                </dd>
+                <dt><span jhiTranslate="truequearApp.objetos.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{objetos.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="truequearApp.objetos.nombre">Nombre</span></dt>
+                <dd>
+                    {{objetos.nombreId}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/objetos', objetos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
