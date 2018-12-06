@@ -1,0 +1,27 @@
+{
+    "name": "Valoracion",
+    "fields": [
+        {
+            "fieldName": "tipoValoracion",
+            "fieldType": "TipoValoracion",
+            "fieldValues": "EXELENTE,BUENA,REGULAR,POCOSERIO,PESIMO"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "nombre",
+            "otherEntityName": "cliente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181206030550",
+    "entityTableName": "valoracion",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

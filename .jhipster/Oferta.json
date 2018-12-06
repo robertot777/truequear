@@ -1,0 +1,44 @@
+{
+    "name": "Oferta",
+    "fields": [
+        {
+            "fieldName": "generarOferta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tipoObjeto",
+            "fieldType": "TipoObjeto",
+            "fieldValues": "ALIMENTACIONBEBIDAS,ARTEANTIGUEDADES,VEHICULOS,CASAHOGAR,COLECCION,DEPORTES,EDUCACION,IMAGENSONIDO,INFORMATICAELECTRONICA,INMOBILIARIA,JOYERIA,JUEGOSJUGUETES,LIBROSREVISTASCOMICS,MUSICA,ROPACALZADO,SALUDBELLEZA,SERVICIOS,MANOOBRA,TELEFONIA,TIEMPOLIBRE"
+        },
+        {
+            "fieldName": "generaOferta",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "nombre",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "oferta"
+        }
+    ],
+    "changelogDate": "20181206030552",
+    "entityTableName": "oferta",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

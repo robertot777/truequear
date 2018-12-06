@@ -1,0 +1,27 @@
+{
+    "truequearApp": {
+        "TipoObjetos": {
+            "null": "",
+            "ALIMENTACIONBEBIDA": "ALIMENTACIONBEBIDA",
+            "ARTEANTIGUEDADE": "ARTEANTIGUEDADE",
+            "VEHICULO": "VEHICULO",
+            "CASAHOGA": "CASAHOGA",
+            "COLECCIONES": "COLECCIONES",
+            "DEPORTE": "DEPORTE",
+            "EDUCAR": "EDUCAR",
+            "IMAGENESSONIDO": "IMAGENESSONIDO",
+            "INFORMATICAEELECTRONICA": "INFORMATICAEELECTRONICA",
+            "INMOBILIARIAS": "INMOBILIARIAS",
+            "JOYERIAS": "JOYERIAS",
+            "JUEGOSJUGUETE": "JUEGOSJUGUETE",
+            "LIBROSREVISTASCOMIC": "LIBROSREVISTASCOMIC",
+            "MUSICAX": "MUSICAX",
+            "ROPAYCALZADO": "ROPAYCALZADO",
+            "SALUDYBELLEZA": "SALUDYBELLEZA",
+            "SERVICIOS": "SERVICIOS",
+            "MANODEOBRA": "MANODEOBRA",
+            "TELEFONIAS": "TELEFONIAS",
+            "TIEMPOLIBRES": "TIEMPOLIBRES"
+        }
+    }
+}

@@ -38,6 +38,14 @@ public class CacheConfiguration {
             cm.createCache(truequear.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(truequear.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(truequear.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(truequear.domain.Comuna.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Region.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Direccion.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Cliente.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Valoracion.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Objetos.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.Oferta.class.getName(), jcacheConfiguration);
+            cm.createCache(truequear.domain.RespuestaOferta.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,26 @@
+{
+    "truequearApp": {
+        "objetos": {
+            "home": {
+                "title": "Objetos",
+                "createLabel": "Create a new Objetos",
+                "createOrEditLabel": "Create or edit a Objetos",
+                "search": "Search for Objetos"
+            },
+            "created": "A new Objetos is created with identifier {{ param }}",
+            "updated": "A Objetos is updated with identifier {{ param }}",
+            "deleted": "A Objetos is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Objetos {{ id }}?"
+            },
+            "detail": {
+                "title": "Objetos"
+            },
+            "tipoObjeto": "Tipo Objeto",
+            "agregarArchibo": "Agregar Archibo",
+            "tipoObjetos": "Tipo Objetos",
+            "descripcion": "Descripcion",
+            "nombre": "Nombre"
+        }
+    }
+}
